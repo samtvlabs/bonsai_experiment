@@ -56,29 +56,6 @@ contract BonsaiStarter is BonsaiCallbackReceiver {
         return result;
     }
 
-    // function verifySignatures(bytes memory msg, bytes memory msig) external {
-    //     // Create a VerificationData struct
-    //     VerificationData memory data = VerificationData({
-    //         msg: msg,
-    //         sig: msig,
-    //     });
-
-    //     // Get the ID of the verification data
-    //     bytes32 id = getVerificationDataId(data);
-
-    //     // Check if the result is already in the cache
-    //     bool result = verificationCache[id];
-    //     if (result) {
-    //         // If the result is in the cache, emit an event and return
-    //         emit CalculateVerificationCallback(data.msg, data.sig,  result);
-    //         return;
-    //     }
-
-    //     // If the result is not in the cache, send a request to Bonsai
-    //     bytes memory input = abi.encode(data);
-    //     bonsaiRelay.request(verificationImageId, input, BONSAI_CALLBACK_GAS_LIMIT);
-    // }
-
     /// @notice Sends a request to Bonsai to verify the signatures.
     /// @dev This function sends the request to Bonsai through the on-chain relay.
     ///      The request will trigger Bonsai to run the specified RISC Zero guest program with

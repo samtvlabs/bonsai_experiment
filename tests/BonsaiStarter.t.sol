@@ -27,7 +27,7 @@ contract BonsaiStarterTest is BonsaiTest {
         // Deploy a new starter instance
         BonsaiStarter starter = new BonsaiStarter(
             IBonsaiRelay(bonsaiRelay),
-            queryImageId('FIBONACCI'));
+            queryImageId('VERIFICATION'));
 
         // Anticipate a callback request to the relay
         vm.expectCall(address(bonsaiRelay), abi.encodeWithSelector(IBonsaiRelay.requestCallback.selector));
