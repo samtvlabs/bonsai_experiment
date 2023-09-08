@@ -4,8 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [[bin]]
-name = "fibonacci"
-path = "src/bin/fibonacci.rs"
+name = "verification"
+path = "src/bin/mythril_verification.rs"
 
 [dependencies]
 blake2 = "0.10.6"

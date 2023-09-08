@@ -16,7 +16,7 @@ use anyhow::Context;
 use bonsai_ethereum_relay::sdk::client::{CallbackRequest, Client};
 use clap::Parser;
 use ethers::{abi::ethabi, types::Address};
-use methods::FIBONACCI_ID;
+use methods::VERIFICATION_ID;
 use risc0_zkvm::sha::Digest;
 
 /// Exmaple code for sending a REST API request to the Bonsai relay service to

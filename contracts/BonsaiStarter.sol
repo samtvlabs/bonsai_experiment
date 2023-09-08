@@ -9,15 +9,26 @@ import {BonsaiCallbackReceiver} from "bonsai/BonsaiCallbackReceiver.sol";
 /// @dev This contract demonstrates one pattern for offloading the computation of an expensive
 //       or difficult to implement function to a RISC Zero guest running on Bonsai.
 contract BonsaiStarter is BonsaiCallbackReceiver {
-    struct StmAggrSig {
-        StmSigRegParty[] signatures;
-        bytes batchProof;
-    }
+    // struct StmAggrSig {
+    //     StmSigRegParty[] signatures;
+    //     bytes batchProof;
+    // }
 
-    struct StmSigRegParty {
-        bytes sig;
-        bytes regParty;
-    }
+    // struct StmSigRegParty {
+    //     StmSig sig;
+    //     RegParty regParty;
+    // }
+
+    // struct StmSig {
+    //     Signature sigma;
+    //     uint256[] indexes;
+    //     uint256 signer_index;
+    // }
+
+    // struct RegParty {
+    //     bytes verificationKey;
+    //     u256 stake;
+    // }
 
     struct VerificationData {
         bytes msg;

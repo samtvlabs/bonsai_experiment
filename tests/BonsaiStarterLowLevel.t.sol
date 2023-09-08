@@ -23,24 +23,24 @@ import {BonsaiStarterLowLevel} from "../contracts/BonsaiStarterLowLevel.sol";
 contract BonsaiStarterLowLevelTest is BonsaiTest {
     function setUp() public withRelay {}
 
-    function testMockLowLevelCall() public {
-        // Deploy a new starter instance
-        BonsaiStarterLowLevel starter = new BonsaiStarterLowLevel(
-            IBonsaiRelay(bonsaiRelay),
-            queryImageId('FIBONACCI'));
+    // function testMockLowLevelCall() public {
+    //     // Deploy a new starter instance
+    //     BonsaiStarterLowLevel starter = new BonsaiStarterLowLevel(
+    //         IBonsaiRelay(bonsaiRelay),
+    //         queryImageId('FIBONACCI'));
 
-        // Anticipate a callback request to the relay
-        vm.expectCall(address(bonsaiRelay), abi.encodeWithSelector(IBonsaiRelay.requestCallback.selector));
-        // Request the callback
-        starter.calculateFibonacci(128);
+    //     // Anticipate a callback request to the relay
+    //     vm.expectCall(address(bonsaiRelay), abi.encodeWithSelector(IBonsaiRelay.requestCallback.selector));
+    //     // Request the callback
+    //     starter.calculateFibonacci(128);
 
-        // Anticipate a callback invocation on the starter contract
-        vm.expectCall(address(starter), abi.encodeWithSelector(starter.bonsaiLowLevelCallbackReceiver.selector));
-        // Relay the solution as a callback
-        runPendingCallbackRequest();
+    //     // Anticipate a callback invocation on the starter contract
+    //     vm.expectCall(address(starter), abi.encodeWithSelector(starter.bonsaiLowLevelCallbackReceiver.selector));
+    //     // Relay the solution as a callback
+    //     runPendingCallbackRequest();
 
-        // Validate the Fibonacci solution value
-        uint256 result = starter.fibonacci(128);
-        assertEq(result, uint256(407305795904080553832073954));
-    }
+    //     // Validate the Fibonacci solution value
+    //     uint256 result = starter.fibonacci(128);
+    //     assertEq(result, uint256(407305795904080553832073954));
+    // }
 }
